@@ -4,7 +4,7 @@ os: linux
 dist: trusty
 
 env:
-  - COVERAGE=0.35
+  - COVERAGE=0.31
 
 script:
   - ./gradlew clean jar
