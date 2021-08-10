@@ -10,11 +10,11 @@ jobs:
   include:
     - stage: test
       env:
-        - COVERAGE=0.39
+        - COVERAGE=0.4
       script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/repository/order check
     - stage: test
       env:
-        - COVERAGE=0.32
+        - COVERAGE=0.31
       script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/repository/user check
 
 after_success:
