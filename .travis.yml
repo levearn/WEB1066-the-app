@@ -30,8 +30,7 @@ jobs:
     - stage: test
       jdk: oraclejdk8
       env:
-    - stage: test
-      jdk: oraclejdk8
+        - COVERAGE=0.39
       script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/repository/order check
     - stage: test
       jdk: oraclejdk8
@@ -49,7 +48,7 @@ jobs:
         - COVERAGE=0.31
       script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/repository/user check
     - stage: test
-      jdk: oraclejdk8
+      jdk: oraclejdk9
       env:
         - COVERAGE=0.5
       script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/ui check
@@ -66,8 +65,7 @@ jobs:
     - stage: test
       jdk: oraclejdk9
       env:
-    - stage: test
-      jdk: oraclejdk9
+        - COVERAGE=0.39
       script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/repository/order check
     - stage: test
       jdk: oraclejdk9
