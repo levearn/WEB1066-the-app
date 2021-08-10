@@ -1,37 +1,19 @@
 language: java
-jdk: oraclejdk8
+jdk:
+  - oraclejdk8
+  - oraclejdk9
 os: linux
 dist: trusty
 
+script:
+  - ./gradlew clean jar
+
 jobs:
   include:
-    - stage: build_jar
-      install: skip
-      script: ./gradlew clean jar
-    - stage: test
-      env:
-        - COVERAGE=0.5
-      script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/ui check
-    - stage: test
-      env:
-        - COVERAGE=0.5
-      script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/service/cart check
-    - stage: test
-      env:
-        - COVERAGE=0.5
-      script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/service/user check
     - stage: test
       env:
         - COVERAGE=0.39
       script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/repository/order check
-    - stage: test
-      env:
-        - COVERAGE=0.5
-      script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/repository/cart check
-    - stage: test
-      env:
-        - COVERAGE=0.5
-      script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/repository/product check
     - stage: test
       env:
         - COVERAGE=0.31
