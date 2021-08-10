@@ -11,7 +11,7 @@ jobs:
   - stage: test
     env:
       - COVERAGE=0.5
-     script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/ui check
+    script: COVERAGE=${COVERAGE} ./gradlew -p ./monolithic/ui check
   - stage: test
     env:
       - COVERAGE=0.5
