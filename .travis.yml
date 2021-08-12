@@ -105,4 +105,3 @@ deploy:
       branch: master
     on:
       condition: "$BUILD_PATH=monolithic_ui"
-
